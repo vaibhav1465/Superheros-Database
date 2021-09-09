@@ -30281,59 +30281,65 @@ let superHeros=[
       }
     }
   ]
+  
 
 //   console.log(superHeros);
 display=()=>{
   let superheroString="";
-  superHeros.forEach(function(){
+  superHeros.forEach(function(superhero,index){
     superheroString+=
     `
     <div class="superhero">
           <div class="superhero-img">
-              <img src="${superheros.images.md}" alt="">
+              <img src="${superhero.images.md}" alt="">
           </div>
           <div class="superhero-details">
-              <h1 class="superhero-name">${superheros.name}</h1>
-              <h2 class="superhero-ghw">${superheros.appearance.gender} ${superheros.appearance.height[0]} ${superheros.appearance.weight[1]}</h2>
+              <h1 class="superhero-name">${superhero.name}</h1>
+              <h2 class="superhero-ghw">${superhero.appearance.gender} ${superhero.appearance.height[0]} ${superhero.appearance.weight[1]}</h2>
               <div class="superhero-pb">
-                  <h3 class="superhero-stats">Intelligence : ${superheros.powerstats.intelligence}</h3>
+                  <h3 class="superhero-stats">Intelligence : ${superhero.powerstats.intelligence}</h3>
                   <div class="superhero-ps">
-                      <div class="superhero-actualPs" style="width:${superheros.powerstats.intelligence}"></div>
+                      <div class="superhero-actualPs" style="width:${superhero.powerstats.intelligence}%"></div>
                   </div>
               </div>
               <div class="superhero-pb">
-                <h3 class="superhero-stats">Power : ${superheros.powerstats.power}</h3>
+                <h3 class="superhero-stats">Power : ${superhero.powerstats.power}</h3>
                 <div class="superhero-ps">
-                    <div class="superhero-actualPs" style="width:${superheros.powerstats.power}"></div>
+                    <div class="superhero-actualPs" style="width:${superhero.powerstats.power}%"></div>
                 </div>
             </div>
             <div class="superhero-pb">
-                <h3 class="superhero-stats">Durability : ${superheros.powerstats.durability}</h3>
+                <h3 class="superhero-stats">Durability : ${superhero.powerstats.durability}</h3>
                 <div class="superhero-ps">
-                    <div class="superhero-actualPs" style="width:${superheros.powerstats.durability}"></div>
+                    <div class="superhero-actualPs" style="width:${superhero.powerstats.durability}%"></div>
                 </div>
             </div>
             <div class="superhero-pb">
-                <h3 class="superhero-stats">Strength : :${superheros.powerstats.strength}</h3>
+                <h3 class="superhero-stats">Strength : :${superhero.powerstats.strength}</h3>
                 <div class="superhero-ps">
-                    <div class="superhero-actualPs" style="width:${superheros.powerstats.strength}"></div>
+                    <div class="superhero-actualPs" style="width:${superhero.powerstats.strength}%"></div>
                 </div>
             </div>
             <div class="superhero-pb">
-                <h3 class="superhero-stats">Combat : ${superheros.powerstats.combat}</h3>
+                <h3 class="superhero-stats">Combat : ${superhero.powerstats.combat}</h3>
                 <div class="superhero-ps">
-                    <div class="superhero-actualPs" style="width:${superheros.powerstats.combat}"></div>
+                    <div class="superhero-actualPs" style="width:${superhero.powerstats.combat}%"></div>
                 </div>
             </div>
             <div class="superhero-pb">
-                <h3 class="superhero-stats">Speed : ${superheros.powerstats.speed}</h3>
+                <h3 class="superhero-stats">Speed : ${superhero.powerstats.speed}</h3>
                 <div class="superhero-ps">
-                    <div class="superhero-actualPs" style="width:${superheros.powerstats.speed}"></div>
+                    <div class="superhero-actualPs" style="width:${superhero.powerstats.speed}%"></div>
                 </div>
             </div>
+          </div>
           </div>
       
 
     `
   });
+
+  document.getElementById("superheros").innerHTML=superheroString;
+
 }
+display();
