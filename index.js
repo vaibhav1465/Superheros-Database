@@ -30283,7 +30283,57 @@ let superHeros=[
   ]
 
 //   console.log(superHeros);
-  console.log(superHeros.length);
-  superHeros.forEach(function(i,i1){
-      console.log(i.id);
-  })
+display=()=>{
+  let superheroString="";
+  superHeros.forEach(function(){
+    superheroString+=
+    `
+    <div class="superhero">
+          <div class="superhero-img">
+              <img src="${superheros.images.md}" alt="">
+          </div>
+          <div class="superhero-details">
+              <h1 class="superhero-name">${superheros.name}</h1>
+              <h2 class="superhero-ghw">${superheros.appearance.gender} ${superheros.appearance.height[0]} ${superheros.appearance.weight[1]}</h2>
+              <div class="superhero-pb">
+                  <h3 class="superhero-stats">Intelligence : ${superheros.powerstats.intelligence}</h3>
+                  <div class="superhero-ps">
+                      <div class="superhero-actualPs" style="width:${superheros.powerstats.intelligence}"></div>
+                  </div>
+              </div>
+              <div class="superhero-pb">
+                <h3 class="superhero-stats">Power : ${superheros.powerstats.power}</h3>
+                <div class="superhero-ps">
+                    <div class="superhero-actualPs" style="width:${superheros.powerstats.power}"></div>
+                </div>
+            </div>
+            <div class="superhero-pb">
+                <h3 class="superhero-stats">Durability : ${superheros.powerstats.durability}</h3>
+                <div class="superhero-ps">
+                    <div class="superhero-actualPs" style="width:${superheros.powerstats.durability}"></div>
+                </div>
+            </div>
+            <div class="superhero-pb">
+                <h3 class="superhero-stats">Strength : :${superheros.powerstats.strength}</h3>
+                <div class="superhero-ps">
+                    <div class="superhero-actualPs" style="width:${superheros.powerstats.strength}"></div>
+                </div>
+            </div>
+            <div class="superhero-pb">
+                <h3 class="superhero-stats">Combat : ${superheros.powerstats.combat}</h3>
+                <div class="superhero-ps">
+                    <div class="superhero-actualPs" style="width:${superheros.powerstats.combat}"></div>
+                </div>
+            </div>
+            <div class="superhero-pb">
+                <h3 class="superhero-stats">Speed : ${superheros.powerstats.speed}</h3>
+                <div class="superhero-ps">
+                    <div class="superhero-actualPs" style="width:${superheros.powerstats.speed}"></div>
+                </div>
+            </div>
+          </div>
+      
+
+    `
+  });
+}
