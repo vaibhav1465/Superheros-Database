@@ -30362,6 +30362,7 @@ display=(superheros)=>{
 
 }
 display(tempSuperhero);
+document.getElementById("count").innerText=`(${tempSuperhero.length} Found)`;
 
 filters={
   gender:{active:false,value:""},
@@ -30379,5 +30380,27 @@ setfilter=(property,value)=>{
   console.log(filters);
 }
 applyfilters=()=>{
-  
+  tempSuperhero=superHeros;
+  if(filters.gender.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return superhero.appearance.gender.toUpperCase()===filters.gender.value.toUpperCase();
+    });
+ }
+ if(filters.publisher.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return superhero.biography.publisher===filters.publisher.value;
+    });
+ }
+ 
+
+ 
+ display(tempSuperhero);
+ document.getElementById("count").innerText=`(${tempSuperhero.length} Found)`;
+}
+cancelFilter=()=>{
+  setfilter('gender',"");
+  setfilter('publisher',"");
+  applyfilters();
 }
