@@ -10,13 +10,13 @@
     <div class="main">
         <div class="filters">
             <div class="filterfields">
-                <select class="filterfield" id="gender-field">
+                <select class="filterfield" id="gender-field" onchange="setfilter('gender',this.value)">
                     <option value="">Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="-">Others</option>
                 </select>
-                <select class="filterfield" id="publisher-field">
+                <select class="filterfield" id="publisher-field" onchange="setfilter('publisher',this.value)">
                     <option value="">Select Publisher</option>
                     <option value="Marvel Comics">Marvel Comics</option>
                     <option value="Dark Horse Comics">Dark Horse Comics</option>
@@ -87,7 +87,10 @@
                     <option value="Ant-Man">Ant-Man</option>
                 </select>
             </div>
-            <div class="filter-controls"></div>
+            <div class="filter-controls">
+                <button class="btn" onclick="applyfilters()">Apply Filters</button>
+                <button class="btn">Cancel Filters</button>
+            </div>
         </div>
 
         <h1>SuperHeros</h1>
