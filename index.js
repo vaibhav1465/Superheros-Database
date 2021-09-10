@@ -30281,7 +30281,8 @@ let superHeros=[
       }
     }
   ]
-  
+  let tempSuperhero=superHeros;
+
 let data=superHeros.map(function(superhero){
 return superhero.biography.publisher;
 });
@@ -30301,10 +30302,10 @@ return superhero.biography.publisher;
    `<option value="${e}">${e}</option>
    `
   });
-  console.log(optionString);
-display=()=>{
+  // console.log(optionString);
+display=(superheros)=>{
   let superheroString="";
-  superHeros.forEach(function(superhero,index){
+  superheros.forEach(function(superhero,index){
     superheroString+=
     `
     <div class="superhero">
@@ -30360,4 +30361,23 @@ display=()=>{
   document.getElementById("superheros").innerHTML=superheroString;
 
 }
-display();
+display(tempSuperhero);
+
+filters={
+  gender:{active:false,value:""},
+  publisher:{active:false,value:""}
+}
+setfilter=(property,value)=>{
+  if(value!==""){
+    filters[property].active=true;
+    filters[property].value=value;
+  }
+  else{
+    filters[property].active=false;
+    filters[property].value="";
+  }
+  console.log(filters);
+}
+applyfilters=()=>{
+  
+}
