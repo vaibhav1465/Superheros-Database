@@ -30282,8 +30282,26 @@ let superHeros=[
     }
   ]
   
-
-//   console.log(superHeros);
+let data=superHeros.map(function(superhero){
+return superhero.biography.publisher;
+});
+  
+  let newdata=[];
+  data.forEach(function(e,i){
+      if(newdata.length==0)
+      newdata.push(e);
+      else if(newdata.length!==0 && !newdata.includes(e) && e!==null && e!=='-'){
+        newdata.push(e);
+      }
+  });
+  
+  let optionString="";
+  newdata.forEach(function(e){
+   optionString+=
+   `<option value="${e}">${e}</option>
+   `
+  });
+  console.log(optionString);
 display=()=>{
   let superheroString="";
   superHeros.forEach(function(superhero,index){
