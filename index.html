@@ -7,189 +7,186 @@
 </head>
 
 <body>
-    <div class="filters">
-        <div class="filterfields">
-            <div class="filterfield">
-                <p>Select Gender</p>
-                <select class="inf" id="gender-field" onchange="setfilter('gender',this.value)">
-                    <option value="">Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="-">Others</option>
-                </select>
+    <form>
+        <div class="filters">
+            <div class="filter-search">
+                <input type="text" placeholder="Search by Name">
             </div>
-            <div class="filterfield">
-                <p>Select Publisher</p>
-                <select class="inf" id="publisher-field" onchange="setfilter('publisher',this.value)">
-                    <option value="">Select Publisher</option>
-                    <option value="Marvel Comics">Marvel Comics</option>
-                    <option value="Dark Horse Comics">Dark Horse Comics</option>
-                    <option value="DC Comics">DC Comics</option>
-                    <option value="NBC - Heroes">NBC - Heroes</option>
-                    <option value="Wildstorm">Wildstorm</option>
-                    <option value="Archangel">Archangel</option>
-                    <option value="Tempest">Tempest</option>
-                    <option value="Giant-Man">Giant-Man</option>
-                    <option value="Toxin">Toxin</option>
-                    <option value="Angel">Angel</option>
-                    <option value="Goliath">Goliath</option>
-                    <option value="Oracle">Oracle</option>
-                    <option value="Spoiler">Spoiler</option>
-                    <option value="Nightwing">Nightwing</option>
-                    <option value="Icon Comics">Icon Comics</option>
-                    <option value="SyFy">SyFy</option>
-                    <option value="George Lucas">George Lucas</option>
-                    <option value="Meltdown">Meltdown</option>
-                    <option value="Gemini V">Gemini V</option>
-                    <option value="South Park">South Park</option>
-                    <option value="Binary">Binary</option>
-                    <option value="ABC Studios">ABC Studios</option>
-                    <option value="Universal Studios">Universal Studios</option>
-                    <option value="Star Trek">Star Trek</option>
-                    <option value="Evil Deadpool">Evil Deadpool</option>
-                    <option value="IDW Publishing">IDW Publishing</option>
-                    <option value="Deadpool">Deadpool</option>
-                    <option value="Black Racer">Black Racer</option>
-                    <option value="Speed Demon">Speed Demon</option>
-                    <option value="Impulse">Impulse</option>
-                    <option value="Shueisha">Shueisha</option>
-                    <option value="Sony Pictures">Sony Pictures</option>
-                    <option value="J. K. Rowling">J. K. Rowling</option>
-                    <option value="Batgirl III">Batgirl III</option>
-                    <option value="Flash IV">Flash IV</option>
-                    <option value="Titan Books">Titan Books</option>
-                    <option value="Phoenix">Phoenix</option>
-                    <option value="Power Woman">Power Woman</option>
-                    <option value="Rebellion">Rebellion</option>
-                    <option value="Iron Lad">Iron Lad</option>
-                    <option value="Power Man">Power Man</option>
-                    <option value="Image Comics">Image Comics</option>
-                    <option value="Microsoft">Microsoft</option>
-                    <option value="Boom-Boom">Boom-Boom</option>
-                    <option value="Batgirl V">Batgirl V</option>
-                    <option value="She-Thing">She-Thing</option>
-                    <option value="Batman II">Batman II</option>
-                    <option value="Batgirl">Batgirl</option>
-                    <option value="Jean Grey">Jean Grey</option>
-                    <option value="Robin II">Robin II</option>
-                    <option value="Robin III">Robin III</option>
-                    <option value="Red Hood">Red Hood</option>
-                    <option value="Red Robin">Red Robin</option>
-                    <option value="J. R. R. Tolkien">J. R. R. Tolkien</option>
-                    <option value="Spider-Carnage">Spider-Carnage</option>
-                    <option value="Venom III">Venom III</option>
-                    <option value="Ms Marvel II">Ms Marvel II</option>
-                    <option value="Aztar">Aztar</option>
-                    <option value="Superman Prime One-Million">Superman Prime One-Million</option>
-                    <option value="Angel Salvadore">Angel Salvadore</option>
-                    <option value="Rune King Thor">Rune King Thor</option>
-                    <option value="Anti-Venom">Anti-Venom</option>
-                    <option value="Scorpion">Scorpion</option>
-                    <option value="Vindicator II">Vindicator II</option>
-                    <option value="Anti-Vision">Anti-Vision</option>
-                    <option value="Thunderbird II">Thunderbird II</option>
-                    <option value="Ant-Man">Ant-Man</option>
-                </select>
-            </div>
-
-        </div>
-        <div class="filter-ranges">
-            <div class="filterfield"> 
-                <div>
-                    <p>Minimum Weight</p>
-                    <input type="number" class="inf">
+            <div class="filter-fields">
+                <div class="filterfield">
+                    <p>Select Gender</p>
+                    <select onchange="setfilter('gender',this.value)">
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="-">Others</option>
+                    </select>
                 </div>
-                <div>
-                    <p>Maximum Weight</p>
-                    <input type="number" class="inf">
-                </div>
-            </div>
-            <div>
-                <div>
-                    <p>Maximum Weight</p>
-                    <!-- Minimum Intelligence -->
-                    <input type="number" class="inf">
-                </div>
-                <div>
-                    <p>Maximum Weight</p>
-                    <!-- Maximum Intelligence -->
-                    <input type="number" class="inf">
-                </div>
-            </div>
-            <div>
-                <div>
-                    <p>Maximum Weight</p>
-                    <!-- Minimum Combat -->
-                    <input type="number" class="inf">
-                </div>
-                <div>
-                    <p>Maximum Weight</p>
-                    <!-- Maximum Combat -->
-                    <input type="number" class="inf">
-                </div>
-            </div>
-            <div>
-                <div>
-                    <p>Maximum Weight</p>
-                    <!-- Minimum Power -->
-                    <input type="number" class="inf">
-                </div>
-                <div>
-                    <p>Maximum Weight</p>
-                    <!-- Maximum Power -->
-                    <input type="number" class="inf">
-                </div>
-            </div>
-            <div>
-                <div>
-                    <p>Maximum Weight</p>
-                    <!-- Minimum Strenght -->
-                    <input type="number" class="inf">
-                </div>
-                <div>
-                    <p>Maximum Weight</p>
-                    <!-- Maximum Strenght -->
-                    <input type="number" class="inf">
+                <div class="filterfield">
+                    <p>Select Publisher</p>
+                    <select onchange="setfilter('publisher',this.value)">
+                        <option value="">Select Publisher</option>
+                        <option value="Marvel Comics">Marvel Comics</option>
+                        <option value="Dark Horse Comics">Dark Horse Comics</option>
+                        <option value="DC Comics">DC Comics</option>
+                        <option value="NBC - Heroes">NBC - Heroes</option>
+                        <option value="Wildstorm">Wildstorm</option>
+                        <option value="Archangel">Archangel</option>
+                        <option value="Tempest">Tempest</option>
+                        <option value="Giant-Man">Giant-Man</option>
+                        <option value="Toxin">Toxin</option>
+                        <option value="Angel">Angel</option>
+                        <option value="Goliath">Goliath</option>
+                        <option value="Oracle">Oracle</option>
+                        <option value="Spoiler">Spoiler</option>
+                        <option value="Nightwing">Nightwing</option>
+                        <option value="Icon Comics">Icon Comics</option>
+                        <option value="SyFy">SyFy</option>
+                        <option value="George Lucas">George Lucas</option>
+                        <option value="Meltdown">Meltdown</option>
+                        <option value="Gemini V">Gemini V</option>
+                        <option value="South Park">South Park</option>
+                        <option value="Binary">Binary</option>
+                        <option value="ABC Studios">ABC Studios</option>
+                        <option value="Universal Studios">Universal Studios</option>
+                        <option value="Star Trek">Star Trek</option>
+                        <option value="Evil Deadpool">Evil Deadpool</option>
+                        <option value="IDW Publishing">IDW Publishing</option>
+                        <option value="Deadpool">Deadpool</option>
+                        <option value="Black Racer">Black Racer</option>
+                        <option value="Speed Demon">Speed Demon</option>
+                        <option value="Impulse">Impulse</option>
+                        <option value="Shueisha">Shueisha</option>
+                        <option value="Sony Pictures">Sony Pictures</option>
+                        <option value="J. K. Rowling">J. K. Rowling</option>
+                        <option value="Batgirl III">Batgirl III</option>
+                        <option value="Flash IV">Flash IV</option>
+                        <option value="Titan Books">Titan Books</option>
+                        <option value="Phoenix">Phoenix</option>
+                        <option value="Power Woman">Power Woman</option>
+                        <option value="Rebellion">Rebellion</option>
+                        <option value="Iron Lad">Iron Lad</option>
+                        <option value="Power Man">Power Man</option>
+                        <option value="Image Comics">Image Comics</option>
+                        <option value="Microsoft">Microsoft</option>
+                        <option value="Boom-Boom">Boom-Boom</option>
+                        <option value="Batgirl V">Batgirl V</option>
+                        <option value="She-Thing">She-Thing</option>
+                        <option value="Batman II">Batman II</option>
+                        <option value="Batgirl">Batgirl</option>
+                        <option value="Jean Grey">Jean Grey</option>
+                        <option value="Robin II">Robin II</option>
+                        <option value="Robin III">Robin III</option>
+                        <option value="Red Hood">Red Hood</option>
+                        <option value="Red Robin">Red Robin</option>
+                        <option value="J. R. R. Tolkien">J. R. R. Tolkien</option>
+                        <option value="Spider-Carnage">Spider-Carnage</option>
+                        <option value="Venom III">Venom III</option>
+                        <option value="Ms Marvel II">Ms Marvel II</option>
+                        <option value="Aztar">Aztar</option>
+                        <option value="Superman Prime One-Million">Superman Prime One-Million</option>
+                        <option value="Angel Salvadore">Angel Salvadore</option>
+                        <option value="Rune King Thor">Rune King Thor</option>
+                        <option value="Anti-Venom">Anti-Venom</option>
+                        <option value="Scorpion">Scorpion</option>
+                        <option value="Vindicator II">Vindicator II</option>
+                        <option value="Anti-Vision">Anti-Vision</option>
+                        <option value="Thunderbird II">Thunderbird II</option>
+                        <option value="Ant-Man">Ant-Man</option>
+                    </select>
                 </div>
 
-            </div>
-            <div>
-                <div>
-                    <p>Maximum Weight</p>
-                    <!-- Minimum Durability -->
-                    <input type="number" class="inf">
-                </div>
-                <div>
-                    <p>Maximum Weight</p>
-                    <!-- Maximum Durability -->
-                    <input type="number"class="inf">
-                </div>
-            </div>
-            <div>
-                <div>
-                    <p>Maximum Weight</p>
-                    <!-- Minimum Speed -->
-                    <input type="number" class="inf">
-                </div>
-                <div>
-                    <p>Maximum Weight</p>
-                    <!-- Maximum Speed -->
-                    <input type="number" class="inf">
-                </div>
-            </div>
-        </div>
 
-    </div>
-    <!-- <div class="filter-controls">
-            <button class="btn" onclick="applyfilters()">Apply Filters</button>
+            </div>
+            <div class="filter-ranges">
+                <div class="filterrange">
+                    <div>
+                        <p>Minimum Weight</p>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <p>Maximum Weight</p>
+                        <input type="number">
+                    </div>
+                </div>
+                <div class="filterrange">
+                    <div>
+                        <p>Minimum Intelligence</p>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <p>Maximum Intelligence</p>
+                        <input type="number">
+                    </div>
+                </div>
+                <div class="filterrange">
+                    <div>
+                        <p>Minimum Combat </p>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <p>Maximum Combat</p>
+                        <input type="number">
+                    </div>
+                </div>
+                <div class="filterrange">
+                    <div>
+                        <p>Minimum Power</p>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <p>Maximum Power</p>
+                        <input type="number">
+                    </div>
+                </div>
+                <div class="filterrange">
+                    <div>
+                        <p>Minimum Strenght </p>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <p>Maximum Strenght </p>
+
+                        <input type="number">
+                    </div>
+
+                </div>
+                <div class="filterrange">
+                    <div>
+                        <p>Minimum Durability</p>
+
+                        <input type="number">
+                    </div>
+                    <div>
+                        <p>Maximum Durability </p>
+
+                        <input type="number">
+                    </div>
+                </div>
+                <div class="filterrange last">
+                    <div>
+                        <p>Minimum Speed</p>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <p>Maximum Speed</p>
+                        <input type="number">
+                    </div>
+                </div>
+            </div>
+            <div class="filter-controls">
+                <button class="btn" onclick="applyfilters()">Apply Filters</button>
             <button class="btn" onclick="cancelFilter()">Cancel Filters</button>
-        </div> -->
-    <!-- <div class="main">
+            </div>
+        </div>
+    </form>
+           
+    <div class="main">
         <h1>SuperHeros <span id="count"></span></h1>
         <div class="superheros" id="superheros"></div>
     </div> -->
 
-    <!-- <script src="index.js"></script> -->
+     <script src="index.js"></script>
 </body>
 
 </html>
