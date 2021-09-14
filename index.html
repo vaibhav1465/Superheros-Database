@@ -7,8 +7,9 @@
 </head>
 
 <body>
-    <form>
+    <form id="super-form">
         <div class="filters">
+            <h1>SuperHeros Database <span id="count"></span></h1>
             <div class="filter-search">
                 <input type="text" placeholder="Search by Name">
             </div>
@@ -102,52 +103,52 @@
                 <div class="filterrange">
                     <div>
                         <p>Minimum Weight</p>
-                        <input type="number">
+                        <input type="number" onkeyup="setfilter('minWeigth',this.value)">
                     </div>
                     <div>
                         <p>Maximum Weight</p>
-                        <input type="number">
+                        <input type="number" onkeyup="setfilter('maxWeigth',this.value)">
                     </div>
                 </div>
                 <div class="filterrange">
                     <div>
                         <p>Minimum Intelligence</p>
-                        <input type="number">
+                        <input type="number" onkeyup="setfilter('minIntelligence',this.value)">
                     </div>
                     <div>
                         <p>Maximum Intelligence</p>
-                        <input type="number">
+                        <input type="number" onkeyup="setfilter('maxIntelligence',this.value)">
                     </div>
                 </div>
                 <div class="filterrange">
                     <div>
                         <p>Minimum Combat </p>
-                        <input type="number">
+                        <input type="number" onkeyup="setfilter('minCombat',this.value)">
                     </div>
                     <div>
                         <p>Maximum Combat</p>
-                        <input type="number">
+                        <input type="number" onkeyup="setfilter('maxCombat',this.value)">
                     </div>
                 </div>
                 <div class="filterrange">
                     <div>
                         <p>Minimum Power</p>
-                        <input type="number">
+                        <input type="number" onkeyup="setfilter('minPower',this.value)">
                     </div>
                     <div>
                         <p>Maximum Power</p>
-                        <input type="number">
+                        <input type="number" onkeyup="setfilter('maxPower',this.value)">
                     </div>
                 </div>
                 <div class="filterrange">
                     <div>
                         <p>Minimum Strenght </p>
-                        <input type="number">
+                        <input type="number" onkeyup="setfilter('minStrength',this.value)">
                     </div>
                     <div>
                         <p>Maximum Strenght </p>
 
-                        <input type="number">
+                        <input type="number" onkeyup="setfilter('maxStrength',this.value)">
                     </div>
 
                 </div>
@@ -155,34 +156,33 @@
                     <div>
                         <p>Minimum Durability</p>
 
-                        <input type="number">
+                        <input type="number" onkeyup="setfilter('minDurability',this.value)">
                     </div>
                     <div>
                         <p>Maximum Durability </p>
 
-                        <input type="number">
+                        <input type="number" onkeyup="setfilter('maxDurability',this.value)">
                     </div>
                 </div>
                 <div class="filterrange last">
                     <div>
                         <p>Minimum Speed</p>
-                        <input type="number">
+                        <input type="number" onkeyup="setfilter('minSpeed',this.value)">
                     </div>
                     <div>
                         <p>Maximum Speed</p>
-                        <input type="number">
+                        <input type="number" onkeyup="setfilter('maxSpeed',this.value)">
                     </div>
                 </div>
             </div>
             <div class="filter-controls">
-                <button class="btn" onclick="applyfilters()">Apply Filters</button>
-            <button class="btn" onclick="cancelFilter()">Cancel Filters</button>
+                <button class="btn" type="button" onclick="applyfilters()">Apply Filters</button>
+            <button class="btn" type="button" onclick="cancelFilter()">Cancel Filters</button>
             </div>
         </div>
     </form>
            
     <div class="main">
-        <h1>SuperHeros <span id="count"></span></h1>
         <div class="superheros" id="superheros"></div>
     </div> -->
 

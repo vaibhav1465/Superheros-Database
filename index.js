@@ -30366,7 +30366,21 @@ document.getElementById("count").innerText=`(${tempSuperhero.length} Found)`;
 
 filters={
   gender:{active:false,value:""},
-  publisher:{active:false,value:""}
+  publisher:{active:false,value:""},
+  minWeigth:{active:false,value:""},
+  minPower:{active:false,value:0},
+  minStrength:{active:false,value:0},
+  minCombat:{active:false,value:0},
+  minSpeed:{active:false,value:0},
+  minIntelligence:{active:false,value:0},
+  minDurability:{active:false,value:0},
+  maxWeigth:{active:false,value:""},
+  maxPower:{active:false,value:""},
+  maxStrength:{active:false,value:""},
+  maxCombat:{active:false,value:""},
+  maxSpeed:{active:false,value:""},
+  maxIntelligence:{active:false,value:""},
+  maxDurability:{active:false,value:""},
 }
 setfilter=(property,value)=>{
   if(value!==""){
@@ -30402,5 +30416,20 @@ applyfilters=()=>{
 cancelFilter=()=>{
   setfilter('gender',"");
   setfilter('publisher',"");
-  applyfilters();
+  setfilter('maxCombat',"");
+ setfilter('maxDurability',"");
+  setfilter('maxIntelligence',"");
+  setfilter('maxPower',"");
+  setfilter('maxSpeed',"");
+  setfilter('maxStrength',"");
+  setfilter('maxWeigth',"");
+  setfilter('minCombat',"");
+  setfilter('minDurability',"");
+  setfilter('minIntelligence',"");
+  setfilter('minPower',"");
+  setfilter('minSpeed',"");
+  setfilter('minStrength',"");
+  setfilter('minWeigth',"");
+  document.getElementById("super-form").reset();
+applyfilters();
 }
