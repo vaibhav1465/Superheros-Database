@@ -7,18 +7,20 @@
 </head>
 
 <body>
-        <div class="filters">
-            <div class="filterfields">
-                <div>
-                <select class="filterfield" id="gender-field" onchange="setfilter('gender',this.value)">
+    <div class="filters">
+        <div class="filterfields">
+            <div class="filterfield">
+                <p>Select Gender</p>
+                <select class="inf" id="gender-field" onchange="setfilter('gender',this.value)">
                     <option value="">Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="-">Others</option>
                 </select>
-                 </div>
-                 <div>
-                <select class="filterfield" id="publisher-field" onchange="setfilter('publisher',this.value)">
+            </div>
+            <div class="filterfield">
+                <p>Select Publisher</p>
+                <select class="inf" id="publisher-field" onchange="setfilter('publisher',this.value)">
                     <option value="">Select Publisher</option>
                     <option value="Marvel Comics">Marvel Comics</option>
                     <option value="Dark Horse Comics">Dark Horse Comics</option>
@@ -88,59 +90,100 @@
                     <option value="Thunderbird II">Thunderbird II</option>
                     <option value="Ant-Man">Ant-Man</option>
                 </select>
+            </div>
+
+        </div>
+        <div class="filter-ranges">
+            <div class="filterfield"> 
+                <div>
+                    <p>Minimum Weight</p>
+                    <input type="number" class="inf">
+                </div>
+                <div>
+                    <p>Maximum Weight</p>
+                    <input type="number" class="inf">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>Maximum Weight</p>
+                    <!-- Minimum Intelligence -->
+                    <input type="number" class="inf">
+                </div>
+                <div>
+                    <p>Maximum Weight</p>
+                    <!-- Maximum Intelligence -->
+                    <input type="number" class="inf">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>Maximum Weight</p>
+                    <!-- Minimum Combat -->
+                    <input type="number" class="inf">
+                </div>
+                <div>
+                    <p>Maximum Weight</p>
+                    <!-- Maximum Combat -->
+                    <input type="number" class="inf">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>Maximum Weight</p>
+                    <!-- Minimum Power -->
+                    <input type="number" class="inf">
+                </div>
+                <div>
+                    <p>Maximum Weight</p>
+                    <!-- Maximum Power -->
+                    <input type="number" class="inf">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>Maximum Weight</p>
+                    <!-- Minimum Strenght -->
+                    <input type="number" class="inf">
+                </div>
+                <div>
+                    <p>Maximum Weight</p>
+                    <!-- Maximum Strenght -->
+                    <input type="number" class="inf">
                 </div>
 
             </div>
-            <div class="filter-ranges">
+            <div>
                 <div>
-                    Minimum Weight
-                    <input type="number">
-                    Maximum Weight
-                    <input type="number">
+                    <p>Maximum Weight</p>
+                    <!-- Minimum Durability -->
+                    <input type="number" class="inf">
                 </div>
                 <div>
-                    Minimum Intelligence
-                    <input type="number">
-                    Maximum Intelligence
-                    <input type="number">
-                </div>
-                <div>
-                    Minimum Combat
-                    <input type="number">
-                    Maximum Combat
-                    <input type="number">
-                </div>
-                <div>
-                    Minimum Power
-                    <input type="number">
-                    Maximum Power
-                    <input type="number">
-                </div>
-                <div>
-                    Minimum Strenght
-                    <input type="number">
-                    Maximum Strenght
-                    <input type="number">
-                </div>
-                <div>
-                    Minimum Durability
-                    <input type="number">
-                    Maximum Durability
-                    <input type="number">
-                </div>
-                <div>
-                    Minimum Speed
-                    <input type="number">
-                    Maximum Speed
-                    <input type="number">
+                    <p>Maximum Weight</p>
+                    <!-- Maximum Durability -->
+                    <input type="number"class="inf">
                 </div>
             </div>
-            
+            <div>
+                <div>
+                    <p>Maximum Weight</p>
+                    <!-- Minimum Speed -->
+                    <input type="number" class="inf">
+                </div>
+                <div>
+                    <p>Maximum Weight</p>
+                    <!-- Maximum Speed -->
+                    <input type="number" class="inf">
+                </div>
+            </div>
         </div>
-        <div class="filter-controls">
+
+    </div>
+    <!-- <div class="filter-controls">
             <button class="btn" onclick="applyfilters()">Apply Filters</button>
             <button class="btn" onclick="cancelFilter()">Cancel Filters</button>
-        </div>
+        </div> -->
     <!-- <div class="main">
         <h1>SuperHeros <span id="count"></span></h1>
         <div class="superheros" id="superheros"></div>
