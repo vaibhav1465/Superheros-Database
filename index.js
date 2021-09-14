@@ -30365,6 +30365,7 @@ display(tempSuperhero);
 document.getElementById("count").innerText=`(${tempSuperhero.length} Found)`;
 
 filters={
+  name:{active:false,value:""},
   gender:{active:false,value:""},
   publisher:{active:false,value:""},
   minWeigth:{active:false,value:""},
@@ -30382,6 +30383,18 @@ filters={
   maxIntelligence:{active:false,value:""},
   maxDurability:{active:false,value:""},
 }
+setNameFilter=(property,value)=>{
+  if(value!==""){
+    filters[property].active=true;
+    filters[property].value=value;
+  }
+  else{
+    filters[property].active=false;
+    filters[property].value="";
+  }
+  console.log(filters);
+  applyfilters();
+}
 setfilter=(property,value)=>{
   if(value!==""){
     filters[property].active=true;
@@ -30395,6 +30408,15 @@ setfilter=(property,value)=>{
 }
 applyfilters=()=>{
   tempSuperhero=superHeros;
+  if(filters.name.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      if(superhero.name.toUpperCase().indexOf(filters.name.value.toUpperCase())===0)
+      return true;
+      else
+      return false;
+    });
+ }
   if(filters.gender.active===true)
   {
     tempSuperhero=tempSuperhero.filter(function(superhero){
