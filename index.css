@@ -2,6 +2,16 @@
     margin: 0px;
     padding: 0px;
 }
+
+.filters{
+    display: flex;
+    justify-content: space-evenly;
+}
+.filterfields{
+display: flex;
+}
+
+
 .main{
     background-color: #2b89e2;
     display: flex;
