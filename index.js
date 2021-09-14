@@ -1269,7 +1269,7 @@ let superHeros=[
       },
       "work": {
         "occupation": "Adventurer, Biochemist, former manager of Avengers Compound",
-        "base": "Avengers Compound, Los Angeles; formerly Infinite Avengers Mansion; Captive aboard a Skrull ship; Avengers Mansion, New York City, New York"
+        "base": "Avengers Compound, Los Angeles; formerly Infinite Avengers Mansion; Captive aboard a Spull ship; Avengers Mansion, New York City, New York"
       },
       "connections": {
         "groupAffiliation": "Avengers Academy, Secret Avengers; formerly Mighty Avengers, Avengers (founding member), Defenders, Future Iron Man's Team",
@@ -30283,25 +30283,25 @@ let superHeros=[
   ]
   let tempSuperhero=superHeros;
 
-let data=superHeros.map(function(superhero){
-return superhero.biography.publisher;
-});
+// let data=superHeros.map(function(superhero){
+// return superhero.biography.publisher;
+// });
   
-  let newdata=[];
-  data.forEach(function(e,i){
-      if(newdata.length==0)
-      newdata.push(e);
-      else if(newdata.length!==0 && !newdata.includes(e) && e!==null && e!=='-'){
-        newdata.push(e);
-      }
-  });
+//   let newdata=[];
+//   data.forEach(function(e,i){
+//       if(newdata.length==0)
+//       newdata.push(e);
+//       else if(newdata.length!==0 && !newdata.includes(e) && e!==null && e!=='-'){
+//         newdata.push(e);
+//       }
+//   });
   
-  let optionString="";
-  newdata.forEach(function(e){
-   optionString+=
-   `<option value="${e}">${e}</option>
-   `
-  });
+//   let optionString="";
+//   newdata.forEach(function(e){
+//    optionString+=
+//    `<option value="${e}">${e}</option>
+//    `
+//   });
   // console.log(optionString);
 display=(superheros)=>{
   let superheroString="";
@@ -30334,7 +30334,7 @@ display=(superheros)=>{
                 </div>
             </div>
             <div class="superhero-pb">
-                <h3 class="superhero-stats">Strength : :${superhero.powerstats.strength}</h3>
+                <h3 class="superhero-stats">Strength : ${superhero.powerstats.strength}</h3>
                 <div class="superhero-ps">
                     <div class="superhero-actualPs" style="width:${superhero.powerstats.strength}%"></div>
                 </div>
@@ -30407,9 +30407,91 @@ applyfilters=()=>{
       return superhero.biography.publisher===filters.publisher.value;
     });
  }
- 
-
- 
+ if(filters.minWeigth.active===true)
+  {
+    // let i=0;
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return Number(superhero.appearance.weight[1].split(' ')[0])>=filters.minWeigth.value;
+    });
+ }
+ if(filters.maxWeigth.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return Number(superhero.appearance.weight[1].split(' ')[0])<=filters.maxWeigth.value;
+    });
+ }
+ if(filters.minIntelligence.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return superhero.powerstats.intelligence>=filters.minIntelligence.value;
+    });
+ }
+ if(filters.maxIntelligence.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return superhero.powerstats.intelligence<=filters.maxIntelligence.value;
+    });
+ }
+ if(filters.minStrength.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return superhero.powerstats.strength>=filters.minStrength.value;
+    });
+ }
+ if(filters.maxStrength.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return superhero.powerstats.strength<=filters.maxStrength.value;
+    });
+ }
+ if(filters.minSpeed.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return superhero.powerstats.speed>=filters.minSpeed.value;
+    });
+ }
+ if(filters.maxSpeed.active===true)
+ {
+   tempSuperhero=tempSuperhero.filter(function(superhero){
+     return superhero.powerstats.speed<=filters.maxSpeed.value;
+   });
+}
+if(filters.minDurability.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return superhero.powerstats.durability>=filters.minDurability.value;
+    });
+ }
+ if(filters.maxDurability.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return superhero.powerstats.durability<=filters.maxDurability.value;
+    });
+ }
+ if(filters.minPower.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return superhero.powerstats.power>=filters.minPower.value;
+    });
+ }
+ if(filters.maxPower.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return superhero.powerstats.power<=filters.maxPower.value;
+    });
+ }
+ if(filters.minCombat.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return superhero.powerstats.combat>=filters.minCombat.value;
+    });
+ }
+ if(filters.maxCombat.active===true)
+  {
+    tempSuperhero=tempSuperhero.filter(function(superhero){
+      return superhero.powerstats.combat<=filters.maxCombat.value;
+    });
+ }
  display(tempSuperhero);
  document.getElementById("count").innerText=`(${tempSuperhero.length} Found)`;
 }
