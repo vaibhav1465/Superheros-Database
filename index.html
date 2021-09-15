@@ -7,11 +7,130 @@
 </head>
 
 <body>
+    <div class="model" id="model">
+        <div class="model-child">
+            <div class="model-img">
+             <img src="https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/1-a-bomb.jpg" alt="" id="model-img">
+            </div>
+            <div class="model-details">
+             <div class="model-title">
+                 <h1  id="title-name">Abin Sur</h1>
+                 <button class="btn" onclick="closeSuperHero()">Close</button>
+             </div>
+             <div class="model-app details">
+                 <h3>Appearance</h3>
+                 <div>
+                  <div class="detail">
+                      <p class="property">Gender</p>
+                      <p class="value" id="gen">Male</p>
+                  </div>
+                  <div class="detail">
+                    <p class="property">Weight</p>
+                    <p class="value" id="wei">121kg</p>
+                </div>
+                <div class="detail">
+                    <p class="property">Height</p>
+                    <p class="value" id="hei">6'2"</p>
+                </div>
+                <div class="detail">
+                    <p class="property" >Eye Color</p>
+                    <p class="value" id="eye">Brown</p>
+                </div>
+                <div class="detail">
+                    <p class="property">Hair Color</p>
+                    <p class="value" id="hair"> Black</p>
+                </div>
+                 </div>
+             </div>
+             <div class="model-bio details">
+                <h3>Biography</h3>
+                <div>
+                 <div class="detail">
+                     <p class="property">Full Name</p>
+                     <p class="value" id="fullname">Richard Milhouse Jones</p>
+                 </div>
+                 <div class="detail">
+                   <p class="property">AlterEgos</p>
+                   <p class="value" id="egos">No alter egos found.</p>
+               </div>
+               <div class="detail">
+                   <p class="property">Place Of Birth</p>
+                   <p class="value" id="pob">Scarsdale, Arizona</p>
+               </div>
+               <div class="detail">
+                   <p class="property">Publisher</p>
+                   <p class="value" id="pub">Marvel Comics</p>
+               </div>
+               <div class="detail">
+                   <p class="property">First Appearance</p>
+                   <p class="value" id="firapp"> Hulk Vol 2 #2 (April, 2008) (as A-Bomb)</p>
+               </div>
+                </div>
+            </div>
+            <div class="model-con details">
+                <h3>Connections</h3>
+                <div>
+                 <div class="detail">
+                     <p class="property">Group Affiliation</p>
+                     <p class="value" id="aff">Hulk Family; Excelsior (sponsor), Avengers (honorary member); formerly partner of the Hulk, Captain America and Captain Marvel; Teen Brigade; ally of Rom</p>
+                 </div>
+                 <div class="detail">
+                   <p class="property">Relatives</p>
+                   <p class="value rel" id="rel">Marlo Chandler-Jones (wife); Polly (aunt); Mrs. Chandler (mother-in-law); Keith Chandler, Ray Chandler, three unidentified others (brothers-in-law); unidentified father (deceased); Jackie Shorr (alleged mother; unconfirmed)</p>
+               </div>
+              
+                </div>
+            </div>
+            <div class="model-pow details">
+                <h3>Powerstats</h3>
+                <div>
+                <div class="superhero-pb">
+                    <p class="property ">Intelligence</p>
+                    <div class="superhero-ps">
+                        <div class="superhero-actualPs"  id="pow-int"></div>
+                    </div>
+                </div>
+                <div class="superhero-pb">
+                    <p class="property">Power</p>
+                    <div class="superhero-ps">
+                        <div class="superhero-actualPs" id="pow-pow"></div>
+                    </div>
+                </div>
+                <div class="superhero-pb">
+                    <p class=" property">Durability</p>
+                    <div class="superhero-ps">
+                        <div class="superhero-actualPs" id="pow-dur"></div>
+                    </div>
+                </div>
+                <div class="superhero-pb">
+                    <p class="property">Strength</p>
+                    <div class="superhero-ps">
+                        <div class="superhero-actualPs"  id="pow-str"></div>
+                    </div>
+                </div>
+                <div class="superhero-pb">
+                    <p class="property">Combat</p>
+                    <div class="superhero-ps">
+                        <div class="superhero-actualPs"  id="pow-com"></div>
+                    </div>
+                </div>
+                <div class="superhero-pb">
+                    <p class="property">Speed</p>
+                    <div class="superhero-ps">
+                        <div class="superhero-actualPs"  id="pow-spe"></div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
     <form id="super-form">
         <div class="filters">
             <h1>SuperHeros Database <span id="count"></span></h1>
             <div class="filter-search">
-                <input type="text" placeholder="Search by Name">
+                <input type="text" placeholder="Search by Name" onkeyup="setNameFilter('name',this.value)">
             </div>
             <div class="filter-fields">
                 <div class="filterfield">
