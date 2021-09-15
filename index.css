@@ -5,6 +5,91 @@
 body{
     background-color: #092435;
 }
+.model{
+width: 100%;
+height: 100vh;
+position: fixed;
+/* background-color:rgba(255, 0, 0, 0.274); */
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.model-child{
+    background-color: wheat;
+    width: 60%;
+    min-height: 65%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+ .model-img{
+  width: 42%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+ } 
+ .model-img>img{
+   width: 100%;
+ }
+ .model-details{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+ }
+ .model-details h3{
+   color: gray;
+   margin-bottom: 7px;
+ }
+ .model-title{
+   display: flex;
+   justify-content: space-between;
+   }
+   .model-title>h1{
+     padding: 10px;
+   }
+ .model-title .btn{
+   width: 20%;
+   background-color: #073e4f;
+   height: 30px;
+   padding: 5px;
+   
+ }
+ .details{
+   display: flex;
+   flex-direction: column;
+   padding: 0px 5px 5px 5px;
+  
+ }
+ .details>div{
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+ }
+ .detail{
+   margin-bottom: 5px;
+ }
+  .model-bio .detail{
+   width: 30%;
+ }
+ .property{
+   font-size: 16px;
+   color: #494444;
+
+ }
+ .model-con .detail{
+   width: 50%;
+ }
+ .value{
+   font-size: 17px;
+   font-weight: bold;
+   
+ }
+ .rel{
+   font-size: 15px;
+ }
+ .model-pow .superhero-pb{
+ width: 45%;
+ }
 .filters {
   width: 100%;
   padding: 50px 0px;
@@ -142,6 +227,9 @@ body{
 .superhero-details {
   margin: 10px;
 }
+.superhero-details h4,h3{
+  margin-bottom: 3px;
+}
 .superhero-img {
   width: 100%;
   height: 270px;
@@ -153,6 +241,9 @@ body{
 .superhero-pb {
   display: flex;
   flex-direction: column;
+}
+.superhero-pb h3{
+  font-size: 16px;
 }
 .superhero-ps {
   width: 100%;
