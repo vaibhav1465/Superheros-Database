@@ -30308,13 +30308,14 @@ display=(superheros)=>{
   superheros.forEach(function(superhero,index){
     superheroString+=
     `
-    <div class="superhero">
+    <div class="superhero" onclick="viewSuperhero(${superhero.id})">
           <div class="superhero-img">
               <img src="${superhero.images.md}" alt="">
           </div>
           <div class="superhero-details">
               <h1 class="superhero-name">${superhero.name}</h1>
-              <h2 class="superhero-ghw">${superhero.appearance.gender} ${superhero.appearance.height[0]} ${superhero.appearance.weight[1]}</h2>
+              <h3 class="superhero-ghw">${superhero.appearance.gender} ${superhero.appearance.height[0]} ${superhero.appearance.weight[1]}</h3>
+              <h4>Publisher : ${superhero.biography.publisher}</h4>
               <div class="superhero-pb">
                   <h3 class="superhero-stats">Intelligence : ${superhero.powerstats.intelligence}</h3>
                   <div class="superhero-ps">
@@ -30382,6 +30383,46 @@ filters={
   maxSpeed:{active:false,value:""},
   maxIntelligence:{active:false,value:""},
   maxDurability:{active:false,value:""},
+}
+let viewSuperhero=(id)=>{
+  document.getElementById("model").style.display="flex";
+  let superHero=superHeros.find((superhero)=>{
+return superhero.id===id;
+  })
+  console.log(superHero);
+  // img
+  document.getElementById("model-img").src=`${superHero.images.lg}`
+  //title
+  document.getElementById("title-name").innerText=`${superHero.name}`;
+  //appreance
+  document.getElementById("gen").innerText=`${superHero.appearance.gender}`;
+  document.getElementById("wei").innerText=`${superHero.appearance.weight}`;
+  document.getElementById("hei").innerText=`${superHero.appearance.height}`;
+  document.getElementById("eye").innerText=`${superHero.appearance.eyeColor}`;
+  document.getElementById("hair").innerText=`${superHero.appearance.hairColor}`;
+//biografhy
+document.getElementById("fullname").innerText=`${superHero.biography.fullName}`;
+document.getElementById("egos").innerText=`${superHero.biography.alterEgos}`;
+document.getElementById("pob").innerText=`${superHero.biography.placeOfBirth}`;
+document.getElementById("pub").innerText=`${superHero.biography.publisher}`;
+document.getElementById("firapp").innerText=`${superHero.biography.firstAppearance}`;
+
+//connections
+document.getElementById("aff").innerText=`${superHero.connections.groupAffiliation}`;
+document.getElementById("rel").innerText=`${superHero.connections.relatives}`;
+
+
+  // powerstats
+  document.getElementById("pow-int").style.width=`${superHero.powerstats.intelligence}%`;
+  document.getElementById("pow-spe").style.width=`${superHero.powerstats.speed}%`;
+  document.getElementById("pow-com").style.width=`${superHero.powerstats.combat}%`;
+  document.getElementById("pow-dur").style.width=`${superHero.powerstats.durability}%`;
+  document.getElementById("pow-str").style.width=`${superHero.powerstats.strength}%`;
+  document.getElementById("pow-pow").style.width=`${superHero.powerstats.power}%`;
+}
+let closeSuperHero=()=>{
+
+document.getElementById("model").style.display="none";
 }
 setNameFilter=(property,value)=>{
   if(value!==""){
