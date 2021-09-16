@@ -72,11 +72,11 @@
                 <div>
                  <div class="detail">
                      <p class="property">Group Affiliation</p>
-                     <p class="value" id="aff">Hulk Family; Excelsior (sponsor), Avengers (honorary member); formerly partner of the Hulk, Captain America and Captain Marvel; Teen Brigade; ally of Rom</p>
+                     <p class="value rel" id="aff">Hulk Family; Excelsior (sponsor), Avengers (honorary member); formerly partner of the Hulk, Captain America and Captain Marvel; Teen Brigade; ally of Rom</p>
                  </div>
                  <div class="detail">
                    <p class="property">Relatives</p>
-                   <p class="value rel" id="rel">Marlo Chandler-Jones (wife); Polly (aunt); Mrs. Chandler (mother-in-law); Keith Chandler, Ray Chandler, three unidentified others (brothers-in-law); unidentified father (deceased); Jackie Shorr (alleged mother; unconfirmed)</p>
+                   <p class="value rel" id="rel">Marlo Chandler-Jones (wife); Polly (aunt); Mrs. Chandler (mother-in-law); Keith Chandler, Ray Chandler</p>
                </div>
               
                 </div>
@@ -324,6 +324,15 @@
     </form>
            
     <div class="main">
+        <div class="heading">
+            <h1 id="current">(1 of 47)</h1>
+            <div class="btns">
+                <input type="number" id="goto" class="goto ml" placeholder="Enter PageNumber">
+                <button class="btn ml" onclick=" gotoPage()">Go</button>
+                <button class="btn ml" onclick="prev()">Prev</button>
+                <button class="btn" onclick="next()">Next</button>
+            </div>
+        </div>
         <div class="superheros" id="superheros"></div>
     </div> -->
 
