@@ -30303,9 +30303,49 @@ let superHeros=[
 //    `
 //   });
   // console.log(optionString);
-display=(superheros)=>{
+  var start=0;
+  var pageCount=Math.ceil((tempSuperhero.length)/12);
+  var pageNumber=1;
+  const next=()=>{
+   if(pageNumber<pageCount)
+   {
+     start+=12;
+     pageNumber++;
+     display(tempSuperhero);
+   }
+
+  }
+  const prev=()=>{
+    if(pageNumber>1)
+    {
+      start-=12;
+      pageNumber--;
+      display(tempSuperhero);
+    }
+  }
+  const gotoPage=()=>{
+
+    let page=document.getElementById("goto").value;
+    if(page!=="" && page >=1 && page <=pageCount )
+    {
+      start=(page-1)*12;
+      pageNumber=page;
+      display(tempSuperhero);
+    }
+    else{
+      if(page==="")
+      alert("Enter PageNumber!!");
+      else
+      alert("Enter a Valid PageNumbe!!");
+    }
+    document.getElementById("goto").value="";
+  }
+display=(superArray)=>{
   let superheroString="";
-  superheros.forEach(function(superhero,index){
+  let tempArray=[...superArray];
+  tempArray=tempArray.splice(start,12);
+
+  tempArray.forEach(function(superhero,index){
     superheroString+=
     `
     <div class="superhero" onclick="viewSuperhero(${superhero.id})">
@@ -30360,11 +30400,11 @@ display=(superheros)=>{
   });
 
   document.getElementById("superheros").innerHTML=superheroString;
-
+  document.getElementById("current").innerText=`${pageNumber} of ${pageCount}`;
 }
 display(tempSuperhero);
 document.getElementById("count").innerText=`(${tempSuperhero.length} Found)`;
-
+document.getElementById("current").innerText=`${pageNumber} of ${pageCount}`;
 filters={
   name:{active:false,value:""},
   gender:{active:false,value:""},
@@ -30425,6 +30465,8 @@ let closeSuperHero=()=>{
 document.getElementById("model").style.display="none";
 }
 setNameFilter=(property,value)=>{
+  start=0;
+  pageNumber=1;
   if(value!==""){
     filters[property].active=true;
     filters[property].value=value;
@@ -30437,6 +30479,8 @@ setNameFilter=(property,value)=>{
   applyfilters();
 }
 setfilter=(property,value)=>{
+  start=0;
+  pageNumber=1;
   if(value!==""){
     filters[property].active=true;
     filters[property].value=value;
@@ -30556,7 +30600,9 @@ if(filters.minDurability.active===true)
     });
  }
  display(tempSuperhero);
+ pageCount=Math.ceil((tempSuperhero.length)/12);
  document.getElementById("count").innerText=`(${tempSuperhero.length} Found)`;
+ document.getElementById("current").innerText=`${pageNumber} of ${pageCount}`;
 }
 cancelFilter=()=>{
   setfilter('gender',"");
@@ -30575,6 +30621,7 @@ cancelFilter=()=>{
   setfilter('minSpeed',"");
   setfilter('minStrength',"");
   setfilter('minWeigth',"");
+  setNameFilter("name","");
   document.getElementById("super-form").reset();
 applyfilters();
 }
@@ -30582,9 +30629,12 @@ sortHeros=()=>{
   let sortPro=document.getElementById("sortP").value;
   let sortTyp=document.getElementById("sortT").value;
   console.log(sortPro,sortTyp);
-  let sortSuperHeros=[...tempSuperhero];
+  console.log(tempSuperhero);
+  // let sortSuperHeros=[...tempSuperhero];
   if(sortTyp !=="" && sortPro !==""){
-     sortSuperHeros.sort(function(a,b){
+    start=0;
+    pageNumber=1;
+     tempSuperhero.sort(function(a,b){
        if(sortTyp==="asc"){
          return a.powerstats[sortPro]-b.powerstats[sortPro];
        }
@@ -30594,8 +30644,9 @@ sortHeros=()=>{
 
      })
   }
-  else{
-   sortSuperHeros=[...tempSuperhero];
-  }
-  display(sortSuperHeros);
+  // console.log(tempSuperhero);
+  // else{
+  //  sortSuperHeros=[...tempSuperhero];
+  // }
+  display(tempSuperhero);
 }
