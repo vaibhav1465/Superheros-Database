@@ -2,94 +2,90 @@
   margin: 0px;
   padding: 0px;
 }
-body{
-    background-color: #092435;
+body {
+  background-color: #092435;
 }
-.model{
-width: 100%;
-height: 100vh;
-position: fixed;
-/* background-color:rgba(255, 0, 0, 0.274); */
-display: none;
-align-items: center;
-justify-content: center;
+.model {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  /* background-color:rgba(255, 0, 0, 0.274); */
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
-.model-child{
-    background-color: wheat;
-    width: 60%;
-    min-height: 65%;
-    display: flex;
-    overflow: hidden;
-    border-radius: 8px;
-  }
- .model-img{
+.model-child {
+  background-color: wheat;
+  width: 60%;
+  min-height: 65%;
+  display: flex;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.model-img {
   width: 42%;
   overflow: hidden;
   display: flex;
   align-items: center;
- } 
- .model-img>img{
-   width: 100%;
- }
- .model-details{
+}
+.model-img > img {
+  width: 100%;
+}
+.model-details {
   width: 60%;
   display: flex;
   flex-direction: column;
- }
- .model-details h3{
-   color: gray;
-   margin-bottom: 7px;
- }
- .model-title{
-   display: flex;
-   justify-content: space-between;
-   }
-   .model-title>h1{
-     padding: 10px;
-   }
- .model-title .btn{
-   width: 20%;
-   background-color: #073e4f;
-   height: 30px;
-   padding: 5px;
-   
- }
- .details{
-   display: flex;
-   flex-direction: column;
-   padding: 0px 5px 5px 5px;
-  
- }
- .details>div{
-   display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
- }
- .detail{
-   margin-bottom: 5px;
- }
-  .model-bio .detail{
-   width: 30%;
- }
- .property{
-   font-size: 16px;
-   color: #494444;
-
- }
- .model-con .detail{
-   width: 50%;
- }
- .value{
-   font-size: 17px;
-   font-weight: bold;
-   
- }
- .rel{
-   font-size: 15px;
- }
- .model-pow .superhero-pb{
- width: 45%;
- }
+}
+.model-details h3 {
+  color: gray;
+  margin-bottom: 7px;
+}
+.model-title {
+  display: flex;
+  justify-content: space-between;
+}
+.model-title > h1 {
+  padding: 10px;
+}
+.model-title .btn {
+  width: 20%;
+  background-color: #073e4f;
+  height: 30px;
+  padding: 5px;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 5px 5px 5px;
+}
+.details > div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.detail {
+  margin-bottom: 5px;
+}
+.model-bio .detail {
+  width: 30%;
+}
+.property {
+  font-size: 16px;
+  color: #494444;
+}
+.model-con .detail {
+  width: 50%;
+}
+.value {
+  font-size: 17px;
+  font-weight: bold;
+}
+.rel {
+  font-size: 15px;
+}
+.model-pow .superhero-pb {
+  width: 45%;
+}
 .filters {
   width: 100%;
   padding: 50px 0px;
@@ -98,8 +94,8 @@ justify-content: center;
   flex-direction: column;
   align-items: center;
 }
-.filters>h1{
-    color: #7b7575;
+.filters > h1 {
+  color: #7b7575;
 }
 .filter-search {
   width: 80%;
@@ -120,7 +116,7 @@ justify-content: center;
 .filter-fields {
   width: 80%;
   /* background-color: lightslategray; */
-  padding: 20px 0px;
+  padding: 10px 0px;
   display: flex;
   justify-content: space-around;
 }
@@ -146,7 +142,7 @@ justify-content: center;
 }
 .filter-ranges {
   width: 80%;
-  padding: 20px 0px;
+  padding: 10px 0px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -183,7 +179,8 @@ justify-content: center;
 }
 .filter-controls {
   width: 80%;
-  padding: 20px 0px;
+  padding: 10px 0px;
+  padding-bottom: 10px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -205,10 +202,33 @@ justify-content: center;
   padding: 0px 70px;
   flex-direction: column;
 }
-.main > h1 {
-  text-align: center;
-  margin-bottom: 50px;
+.main > .heading h1 {
   color: #7b7575;
+  margin-left: 50px;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  /* background-color: chartreuse; */
+}
+.btns {
+  display: flex;
+  width: 40%;
+  justify-content: flex-end;
+}
+.ml {
+  margin-right: 5px;
+}
+.goto {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #857f7f;
+  padding: 7px 0px;
+  /* width: 100%; */
+  text-indent: 20px;
+  color: rgb(187, 178, 178);
+  border-radius: 8px;
 }
 .superheros {
   display: flex;
@@ -229,7 +249,8 @@ justify-content: center;
 .superhero-details {
   margin: 10px;
 }
-.superhero-details h4,h3{
+.superhero-details h4,
+h3 {
   margin-bottom: 3px;
 }
 .superhero-img {
@@ -244,7 +265,7 @@ justify-content: center;
   display: flex;
   flex-direction: column;
 }
-.superhero-pb h3{
+.superhero-pb h3 {
   font-size: 16px;
 }
 .superhero-ps {
