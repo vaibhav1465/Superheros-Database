@@ -30578,3 +30578,24 @@ cancelFilter=()=>{
   document.getElementById("super-form").reset();
 applyfilters();
 }
+sortHeros=()=>{
+  let sortPro=document.getElementById("sortP").value;
+  let sortTyp=document.getElementById("sortT").value;
+  console.log(sortPro,sortTyp);
+  let sortSuperHeros=[...tempSuperhero];
+  if(sortTyp !=="" && sortPro !==""){
+     sortSuperHeros.sort(function(a,b){
+       if(sortTyp==="asc"){
+         return a.powerstats[sortPro]-b.powerstats[sortPro];
+       }
+       else{
+        return b.powerstats[sortPro]-a.powerstats[sortPro];
+       }
+
+     })
+  }
+  else{
+   sortSuperHeros=[...tempSuperhero];
+  }
+  display(sortSuperHeros);
+}
